@@ -6,6 +6,7 @@ public class SimpleOrderSystem
   public static final int ADD_ORDER = 2;
   public static final int ADD_PRODUCT = 3;
   public static final int LIST_CUSTOMERS = 4;
+  public static final int OVERALL_TOTAL = 5;
   public static final int QUIT = 10;
   private Input in = new Input();
   private ArrayList<Customer> customers;
@@ -58,6 +59,8 @@ public class SimpleOrderSystem
       case LIST_CUSTOMERS:
         listCustomers();
         break;
+      case OVERALL_TOTAL:
+        overallTotal();
       default:
         System.out.println("Invalid option - try again");
     }
@@ -87,6 +90,16 @@ public class SimpleOrderSystem
     Customer customer = new Customer(firstName,lastName,address,phone,email);
     customers.add(customer);
   }
+    private void overallTotal(){
+      int total = 0;
+      for (Customer customer: customers){
+        total += customer.getTotalForAllOrders();
+      }
+      System.out.println("Overall Total for all customers is: " + total);
+    };
+
+
+
 
   private void addOrder()
   {
