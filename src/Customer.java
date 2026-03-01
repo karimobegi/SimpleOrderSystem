@@ -7,15 +7,17 @@ public class Customer
   private String address;
   private String phone;
   private String email;
+  private String postCode;
   private ArrayList<Order> orders;
 
-  public Customer(String firstName, String lastName, String address, String phone, String email)
+  public Customer(String firstName, String lastName, String address, String phone, String email, String postCode)
   {
     this.firstName = firstName;
     this.lastName = lastName;
     this.address = address;
     this.phone = phone;
     this.email = email;
+    this.postCode = postCode;
     orders = new ArrayList<Order>();
   }
 
@@ -42,6 +44,9 @@ public class Customer
   public String getEmail()
   {
     return email;
+  }
+  public String getPostCode(){
+    return postCode;
   }
 
   public void addOrder(Order order)

@@ -87,7 +87,9 @@ public class SimpleOrderSystem
     String phone = in.nextLine();
     System.out.println("Enter email address:");
     String email = in.nextLine();
-    Customer customer = new Customer(firstName,lastName,address,phone,email);
+    System.out.println("Enter post code");
+    String postCode = in.nextLine();
+    Customer customer = new Customer(firstName,lastName,address,phone,email, postCode);
     customers.add(customer);
   }
     private void overallTotal(){
@@ -234,6 +236,7 @@ public class SimpleOrderSystem
                                   + ", "
                                   + customer.getFirstName());
       System.out.println("Address: " + customer.getAddress());
+      System.out.println("Post Code: " + customer.getPostCode());
       System.out.println("Phone: " + customer.getPhone());
       System.out.println("Email: " + customer.getEmail());
       System.out.println("Orders made: " + customer.getOrders().size());
